@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class InputWidget extends StatelessWidget {
-  const InputWidget({
-    super.key, required this.hintText, required this.controller, required this.obscureText,
-  });
+  const InputWidget(
+      {super.key,
+      required this.hintText,
+      required this.controller,
+      required this.obscureText});
 
   final String hintText;
   final TextEditingController controller;
@@ -11,19 +13,23 @@ class InputWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(10)
-      ),
-      child: TextField(
-        obscureText: obscureText,
-        controller: controller,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText: hintText,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20.0)
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: const Color(0xFFc71f5d)),
+            borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: TextField(
+            obscureText: obscureText,
+            controller: controller,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: hintText, 
+            ),
+          ),
         ),
       ),
     );
